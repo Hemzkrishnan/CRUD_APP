@@ -8,6 +8,8 @@ const session = require("express-session");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+mongoose.set('strictQuery', false);
+
 //database connection
 mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 .then((e) => console.log('MongoDB Connected'));
